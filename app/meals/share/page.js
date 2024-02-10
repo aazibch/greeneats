@@ -15,8 +15,8 @@ export default function ShareMealPage() {
           Share a <span className={classes.highlight}>meal</span>
         </h1>
         <p>
-          Whether it's your own creation or a recipe you learned from your mom,
-          share it with the community!
+          Whether it&apos;s your own creation or a recipe you learned from your
+          mom, share it with the community!
         </p>
       </header>
       <main className={classes.main}>
