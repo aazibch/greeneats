@@ -12,8 +12,8 @@ export default function Home() {
         </div>
         <div>
           <div className={classes.hero}>
-            <h1>NextLevel Food For Next Level Foodies</h1>
-            <p>Taste and share food from all over the world.</p>
+            <h1>For the conscientious eater</h1>
+            <p>Vegan and vegetarian dishes from all over the world.</p>
           </div>
           <div className={classes.cta}>
             <Link href="/community">Join the Community</Link>
@@ -23,28 +23,26 @@ export default function Home() {
       </header>
       <main>
         <section className={classes.section}>
-          <h2>How it works</h2>
+          <h2>What Is GreenEats</h2>
           <p>
-            NextLevel Food is a platform for foodies to share their favorite
-            recipes with the world. It&apos;s a place to discover new dishes,
-            and to connect with other food lovers.
-          </p>
-          <p>
-            NextLevel Food is a place to discover new dishes, and to connect
-            with other food lovers.
+            GreenEats isn't just another food app; it's a movement towards a
+            more sustainable and compassionate way of eating. By choosing
+            plant-based recipes, you're making a positive impact on the
+            environment and animal welfare. GreenEats empowers you to make
+            conscious choices about what you eat, knowing that every meal you
+            enjoy is helping to reduce your carbon footprint.
           </p>
         </section>
 
         <section className={classes.section}>
-          <h2>Why NextLevel Food?</h2>
+          <h2>How It Works</h2>
           <p>
-            NextLevel Food is a platform for foodies to share their favorite
-            recipes with the world. It&apos;s a place to discover new dishes,
-            and to connect with other food lovers.
-          </p>
-          <p>
-            NextLevel Food is a place to discover new dishes, and to connect
-            with other food lovers.
+            Share your own recipes, tips, and experiences, and connect with
+            others who share your love for green cuisine. Whether you're a
+            seasoned chef or a home cook experimenting with plant-based
+            ingredients, GreenEats is your platform to showcase your culinary
+            creations. Join us on a journey of culinary exploration and
+            conscious eating today!
           </p>
         </section>
       </main>

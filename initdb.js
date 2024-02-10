@@ -5,161 +5,142 @@ const db = sql('meals.db');
 // Dummy data to get started.
 const dummyMeals = [
   {
-    title: 'Juicy Cheese Burger',
-    slug: 'juicy-cheese-burger',
-    image: 'burger.jpg',
+    title: 'Walnut and Lentil Bolognese',
+    slug: 'walnut-and-lentil-bolognese',
+    image: 'walnut-and-lentil-bolognese.jpg',
     summary:
-      'A mouth-watering burger with a juicy beef patty and melted cheese, served in a soft bun.',
-    instructions: `
-      1. Prepare the patty:
-         Mix 200g of ground beef with salt and pepper. Form into a patty.
+      'Indulge in a mouth-watering burger featuring a juicy beef patty and melted cheese, all nestled within a soft bun.',
+    instructions: `Whether you’re a devoted vegan or simply taking a break from meat for the evening, this healthy and hearty bolognese recipe is sure to satisfy. Here’s how to make it:
 
-      2. Cook the patty:
-         Heat a pan with a bit of oil. Cook the patty for 2-3 minutes each side, until browned.
-
-      3. Assemble the burger:
-         Toast the burger bun halves. Place lettuce and tomato on the bottom half. Add the cooked patty and top with a slice of cheese.
-
-      4. Serve:
-         Complete the assembly with the top bun and serve hot.
+    1. Sauté carrots, celery, and onions.
+    
+    2. Add the walnuts, lentils, jar of marinara sauce, and a pinch of salt with water.
+    
+    3. Simmer! Cook low and slow—similar to traditional bolognese—until the lentils are tender.
+    
+    4. Blend! For a creamier texture, consider blending a portion of the bolognese sauce.
+    
+    5. Serve! Toss with your preferred pasta. For an added touch, top it off with a sprinkle of Parmesan cheese if desired.
     `,
     creator: 'John Doe',
     creator_email: 'johndoe@example.com'
   },
   {
-    title: 'Spicy Curry',
-    slug: 'spicy-curry',
-    image: 'curry.jpg',
+    title: 'Vegetable Soup',
+    slug: 'vegetable-soup',
+    image: 'vegetable-soup.jpg',
     summary:
-      'A rich and spicy curry, infused with exotic spices and creamy coconut milk.',
-    instructions: `
-      1. Chop vegetables:
-         Cut your choice of vegetables into bite-sized pieces.
+      'Delight in a classic vegetable soup recipe, perfect for autumn days and chilly winter nights. Start with our recipe, then customize with your favorite veggies!',
+    instructions: `1. Sauté onions and celery in a large stockpot until fragrant and translucent. Take your time—it’s where the real flavor begins.
 
-      2. Sauté vegetables:
-         In a pan with oil, sauté the vegetables until they start to soften.
+    2. Add garlic, zucchini, and green beans, sautéing briefly to deepen their flavors.
 
-      3. Add curry paste:
-         Stir in 2 tablespoons of curry paste and cook for another minute.
+    3. Bring the pot to a boil after adding the remaining ingredients.
 
-      4. Simmer with coconut milk:
-         Pour in 500ml of coconut milk and bring to a simmer. Let it cook for about 15 minutes.
+    4. Simmer over low heat with the pot covered for approximately thirty minutes, or until the vegetables are tender and the soup reaches your desired consistency.
 
-      5. Serve:
-         Enjoy this creamy curry with rice or bread.
+    5. Serve hot, garnished with freshly grated Parmigiano and fresh basil.
     `,
-    creator: 'Max Schwarz',
+    creator: 'Max Anderson',
     creator_email: 'max@example.com'
   },
   {
-    title: 'Homemade Dumplings',
-    slug: 'homemade-dumplings',
-    image: 'dumplings.jpg',
+    title: 'Huevos Rancheros',
+    slug: 'huevos-rancheros',
+    image: 'huevos-rancheros.jpg',
     summary:
-      'Tender dumplings filled with savory meat and vegetables, steamed to perfection.',
-    instructions: `
-      1. Prepare the filling:
-         Mix minced meat, shredded vegetables, and spices.
+      'Savor runny, fried eggs atop seasoned beans, nestled on warm corn tortillas, enhanced with a medley of condiments. Homemade huevos rancheros at your fingertips!',
+    instructions: `You've got breakfast under control. Now, who's making the margs? Here’s how to whip up these quick and easy huevos rancheros:
 
-      2. Fill the dumplings:
-         Place a spoonful of filling in the center of each dumpling wrapper. Wet the edges and fold to seal.
+    1. Fry up eggs to your liking—sunny side up or over easy works!
 
-      3. Steam the dumplings:
-         Arrange dumplings in a steamer. Steam for about 10 minutes.
+    2. Simmer black beans in salsa.
 
-      4. Serve:
-         Enjoy these dumplings hot, with a dipping sauce of your choice.
+    3. Warm tortillas.
+
+    4. Assemble! Layer tortilla, beans, and egg.
+
+    5. Garnish to your heart’s content! Amp it up with extra salsa, avocado, cojita cheese, cilantro, and hot sauce.
     `,
     creator: 'Emily Chen',
     creator_email: 'emilychen@example.com'
   },
   {
-    title: 'Classic Mac n Cheese',
-    slug: 'classic-mac-n-cheese',
-    image: 'macncheese.jpg',
+    title: 'Instant Pot Mac and Cheese',
+    slug: 'instant-pot-mac-and-cheese',
+    image: 'instant-pot-mac-and-cheese.jpg',
     summary:
-      "Creamy and cheesy macaroni, a comforting classic that's always a crowd-pleaser.",
-    instructions: `
-      1. Cook the macaroni:
-         Boil macaroni according to package instructions until al dente.
+      'Discover a rich, creamy, homemade Instant Pot mac and cheese recipe that’s both easier and tastier than the boxed version!',
+    instructions: `We still can’t believe this recipe is ready in about 10 minutes. But it is! Because apparently, that’s the future we’re living in. And a future with homemade mac and cheese ready in 10 minutes sounds pretty good to us.
 
-      2. Prepare cheese sauce:
-         In a saucepan, melt butter, add flour, and gradually whisk in milk until thickened. Stir in grated cheese until melted.
+    1. Add pasta, water, and salt to the Instant Pot.
 
-      3. Combine:
-         Mix the cheese sauce with the drained macaroni.
+    2. Lock the lid and pressure cook for 4 minutes.
 
-      4. Bake:
-         Transfer to a baking dish, top with breadcrumbs, and bake until golden.
+    3. Quick release the steam to prevent overcooking.
 
-      5. Serve:
-         Serve hot, garnished with parsley if desired.
+    4. Stir in the cheeses and heavy cream after opening the lid.
+
+    5. Dig in! It’s that simple.
     `,
     creator: 'Laura Smith',
     creator_email: 'laurasmith@example.com'
   },
   {
-    title: 'Authentic Pizza',
-    slug: 'authentic-pizza',
-    image: 'pizza.jpg',
+    title: 'Perfect Grilled Cheese',
+    slug: 'perfect-grilled-cheese',
+    image: 'perfect-grilled-cheese.jpg',
     summary:
-      'Hand-tossed pizza with a tangy tomato sauce, fresh toppings, and melted cheese.',
-    instructions: `
-      1. Prepare the dough:
-         Knead pizza dough and let it rise until doubled in size.
+      'Experience melted cheese nestled between perfectly toasted golden bread slices. We’ve perfected the classic grilled cheese sandwich!',
+    instructions: `1. In a small bowl, thoroughly mix mayonnaise and butter. Spread this mixture on one side of each bread slice. Add 1/2 cup of grated cheese to one slice and cover it with the other slice.
 
-      2. Shape and add toppings:
-         Roll out the dough, spread tomato sauce, and add your favorite toppings and cheese.
+    2. Place the prepared sandwich in a cold cast iron skillet. Turn the heat to low and watch carefully to prevent burning. Flip when one side turns golden brown, repeating for the other side. This process should take approximately 8-10 minutes per side—don’t rush it for the perfect crispy crust.
 
-      3. Bake the pizza:
-         Bake in a preheated oven at 220°C for about 15-20 minutes.
-
-      4. Serve:
-         Slice hot and enjoy with a sprinkle of basil leaves.
+    3. Once both sides are golden brown, transfer to a plate and serve!
     `,
     creator: 'Mario Rossi',
     creator_email: 'mariorossi@example.com'
   },
   {
-    title: 'Wiener Schnitzel',
-    slug: 'wiener-schnitzel',
-    image: 'schnitzel.jpg',
+    title: 'Vegetarian Meatballs',
+    slug: 'vegetarian-meatballs',
+    image: 'vegetarian-meatballs.jpg',
     summary:
-      'Crispy, golden-brown breaded veal cutlet, a classic Austrian dish.',
-    instructions: `
-      1. Prepare the veal:
-         Pound veal cutlets to an even thickness.
+      'Enjoy savory, meaty vegetarian meatballs crafted from lentils—a delicious alternative to traditional meatballs.',
+    instructions: `1. Preheat oven to 400°F. Toss tomato halves with 1 tsp Italian seasoning, 1 tsp salt, and 1/4 cup olive oil. Arrange tomatoes cut side up on a large baking sheet.
 
-      2. Bread the veal:
-         Coat each cutlet in flour, dip in beaten eggs, and then in breadcrumbs.
+    2. If using dried lentils, boil in a saucepan until tender but not mushy, then drain and set aside.
 
-      3. Fry the schnitzel:
-      Heat oil in a pan and fry each schnitzel until golden brown on both sides.
+    3. Pulse mushrooms in a food processor until pea-sized.
 
-      4. Serve:
-      Serve hot with a slice of lemon and a side of potato salad or greens.
- `,
+    4. Sauté onions, garlic, and mushrooms until moisture evaporates and garlic is fragrant. Combine with lentils in a food processor and pulse until blended.
+
+    5. In a large bowl, mix mushroom-lentil mixture with bread crumbs, Italian seasoning, cayenne, salt, eggs, and Parmesan cheese.
+
+    6. Roll mixture into balls and place on a baking sheet. Lightly brush with olive oil.
+
+    7. Bake meatballs and tomatoes for 30 minutes, flipping meatballs halfway through.
+
+    8. Toss roasted tomatoes and meatballs with cooked spaghetti, olive oil, fresh basil, and Parmesan cheese before serving.
+    `,
     creator: 'Franz Huber',
     creator_email: 'franzhuber@example.com'
   },
   {
-    title: 'Fresh Tomato Salad',
-    slug: 'fresh-tomato-salad',
-    image: 'tomato-salad.jpg',
+    title: 'Coconut Curry Ramen',
+    slug: 'coconut-curry-ramen',
+    image: 'coconut-curry-ramen.jpg',
     summary:
-      'A light and refreshing salad with ripe tomatoes, fresh basil, and a tangy vinaigrette.',
-    instructions: `
-      1. Prepare the tomatoes:
-        Slice fresh tomatoes and arrange them on a plate.
-    
-      2. Add herbs and seasoning:
-         Sprinkle chopped basil, salt, and pepper over the tomatoes.
-    
-      3. Dress the salad:
-         Drizzle with olive oil and balsamic vinegar.
-    
-      4. Serve:
-         Enjoy this simple, flavorful salad as a side dish or light meal.
+      'Experience a rich, vegetable-filled coconut curry soup with instant ramen noodles—a quick and easy vegetarian dinner option.',
+    instructions: `Alright, hungry folks, let’s get cooking! Here’s how to whip up a luxurious, veggie-packed, creamy coconut curry soup with instant ramen noodles:
+
+    1. Create aromatic magic by warming a mixture of red curry paste, curry powder, sesame oil, garlic, and ginger.
+
+    2. Transform that aromatic blend into a comforting soup base by adding stock, coconut milk, green onions, instant noodles (discard the spice packet), mushrooms, lime juice, baby bok choy, and salt.
+
+    3. Bring it to a quick boil, adding shelled edamame for a couple of minutes.
+
+    4. Divide into bowls and enjoy! For a non-vegan twist, top with perfectly cooked six-minute eggs.
     `,
     creator: 'Sophia Green',
     creator_email: 'sophiagreen@example.com'

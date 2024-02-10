@@ -41,19 +41,12 @@
 }
 
 .creator a {
-  background: linear-gradient(90deg, #f9572a, #ff8a05);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #50c878;
 }
 
 .creator a:hover,
 .creator a:active {
-  background: linear-gradient(90deg, #f9572a, #ff8a05);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 18px rgba(248, 190, 42, 0.8);
+  color: #5f9ea0;
 }
 
 .summary {
@@ -63,8 +56,8 @@
 .instructions {
   font-size: 1.25rem;
   line-height: 1.5;
-  background-color: #6e6464;
-  color: #13120f;
+  background-color: #023020;
+  color: #ddd6cb;
   border-radius: 8px;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
   padding: 2rem;

@@ -6,8 +6,8 @@ import MealsGrid from '@/components/meals/meals-grid';
 import { getMeals } from '@/lib/meals';
 
 export const metadata = {
-  title: 'All Meals',
-  description: 'Browse the delicious meals shared by our vibrant community.'
+  title: 'Meals | GreenEats',
+  description: 'Browse the delicious meals shared by our community.'
 };
 
 async function Meals() {
@@ -21,14 +21,12 @@ export default function MealsPage() {
     <>
       <header className={classes.header}>
         <h1>
-          Delicious meals, created{' '}
-          <span className={classes.highlight}>by you</span>
+          Cruelty-free meals, curated{' '}
+          <span className={classes.highlight}>by and for you.</span>
         </h1>
-        <p>
-          Choose your favorite recipe and cook it yourself. It is easy and fun!
-        </p>
+        <p>Pick an Earth-friendly meal to cook or share your own cuisine!</p>
         <p className={classes.cta}>
-          <Link href="/meals/share">Share Your Favorite Recipe</Link>
+          <Link href="/meals/share">Share a Recipe</Link>
         </p>
       </header>
       <main className={classes.main}>

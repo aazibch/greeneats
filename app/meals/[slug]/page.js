@@ -12,7 +12,7 @@ export async function generateMetadata({ params }) {
   }
 
   return {
-    title: meal.title,
+    title: `${meal.title} | GreenEats`,
     description: meal.summary
   };
 }
@@ -31,7 +31,7 @@ export default function MealDetailsPage({ params }) {
       <header className={classes.header}>
         <div className={classes.image}>
           <Image
-            src={`https://nextjs-food-users-images.s3.ap-south-1.amazonaws.com/${image}`}
+            src={`https://nextjs-food-users-images.s3.ap-south-1.amazonaws.com/${meal.image}`}
             alt={meal.title}
             fill
           />
