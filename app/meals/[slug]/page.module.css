@@ -1,6 +1,7 @@
 .header {
   display: flex;
-  padding: 2rem 1rem;
+  /* margin: 5rem auto; */
+  padding: 5rem 1rem;
   gap: 3rem;
   margin: auto;
   max-width: 80rem;
@@ -62,7 +63,7 @@
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
   padding: 2rem;
   max-width: 60rem;
-  margin: 2rem auto;
+  margin: 0 auto 4rem auto;
   animation: fade-slide-in-from-bottom 1s ease-out forwards;
 }
 

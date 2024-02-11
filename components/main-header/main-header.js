@@ -9,7 +9,7 @@ import NavLink from './nav-link';
 export default function MainHeader() {
   return (
     <>
-      <MainHeaderBackground />
+      {/* <MainHeaderBackground /> */}
       <header className={classes.header}>
         <Link className={classes.logo} href="/">
           <Image src={logoImg} alt="A plate with food" priority />
