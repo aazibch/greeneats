@@ -4,11 +4,14 @@ import classes from './meals-grid.module.css';
 export default function MealsGrid({ meals }) {
   return (
     <ul className={classes.meals}>
-      {meals.map((meal) => (
-        <li key={meal.id}>
-          <MealItem {...meal} />
-        </li>
-      ))}
+      {meals.map((meal) => {
+        const mealObject = meal.toObject();
+        return (
+          <li key={meal._id}>
+            <MealItem {...mealObject} />
+          </li>
+        );
+      })}
     </ul>
   );
 }

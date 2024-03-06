@@ -1,6 +1,6 @@
 require('dotenv').config({ path: '.env.local' });
 const mongoose = require('mongoose');
-const Meal = require('./models/Meal');
+const Meal = require('@/models/Meal');
 
 const databaseString = process.env.DB.replace(
   '<password>',
