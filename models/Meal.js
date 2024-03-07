@@ -1,15 +1,6 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
 
-const databaseString = process.env.DB.replace(
-  '<password>',
-  process.env.DB_PASS
-);
-
-mongoose
-  .connect(databaseString)
-  .then(() => console.log('Connected to database...'));
-
 const mealSchema = new mongoose.Schema({
   title: {
     type: String,
