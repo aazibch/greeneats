@@ -23,13 +23,9 @@ const mealSchema = new mongoose.Schema({
     required: true
   },
   creator: {
-    type: String,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
     required: true
-  },
-  creator_email: {
-    type: String,
-    required: true,
-    validate: validator.isEmail
   }
 });
 
