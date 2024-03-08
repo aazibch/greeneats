@@ -2,45 +2,35 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 const bcrypt = require('bcryptjs');
 
+const { generateValidationMessage } = require('@/lib/utils');
+
 const userSchema = new mongoose.Schema(
   {
-    name: {
+    username: {
       type: String,
-      required: [true, 'Please provide a name.'],
-      maxlength: [
-        50,
-        'The name should be the maxiumum length of 50 characters.'
-      ],
-      minlength: [3, 'The name should be the minimum length of 3 characters.'],
+      required: [true, generateValidationMessage('required', 'username')],
+      maxlength: [50, generateValidationMessage('max', 'username', 50)],
+      minlength: [3, generateValidationMessage('min', 'username', 3)],
       validate: {
         validator: function (val) {
-          return /^[a-zA-Z ]*$/.test(val);
+          return /^[a-zA-Z0-9_]*$/.test(val);
         },
         message:
-          'The name can only contain alphabetical characters (letters A-Z).'
+          'The username may only contain alphanumeric characters (letters A-Z, numbers 0-9) and underscores (_).'
       }
     },
     email: {
       type: String,
-      required: [true, 'Please provide an email address.'],
-      validate: [validator.isEmail, 'Please provide a valid email address.'],
-      unique: [true, 'The email address already exists.'],
-      lowercase: true,
-      maxlength: [
-        50,
-        'The email address should be the maxiumum length of 50 characters.'
-      ],
-      minlength: [
-        5,
-        'The email address should be the minimum length of 5 characters.'
-      ]
+      required: [true, generateValidationMessage('required', 'email address')],
+      validate: [validator.isEmail, generateValidationMessage('email')],
+      unique: true,
+      maxlength: [50, generateValidationMessage('max', 'email address', 50)],
+      minlength: [5, generateValidationMessage('min', 'email address', 5)]
     },
     password: {
       type: String,
-      minlength: [
-        8,
-        'The password should be a minimum length of 8 characters.'
-      ],
+      required: [true, generateValidationMessage('required', 'password')],
+      minlength: [8, generateValidationMessage('min', 'password', 8)],
       select: false
     },
     passwordChangeDate: Date
