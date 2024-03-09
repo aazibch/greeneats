@@ -12,8 +12,6 @@ import LogoutButton from './logout-button';
 export default async function MainHeader() {
   const session = await getServerSession(config);
 
-  console.log('[MainHeader] session', session);
-
   return (
     <>
       {/* <MainHeaderBackground /> */}

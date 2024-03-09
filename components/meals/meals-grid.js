@@ -5,10 +5,9 @@ export default function MealsGrid({ meals }) {
   return (
     <ul className={classes.meals}>
       {meals.map((meal) => {
-        const mealObject = meal.toObject();
         return (
           <li key={meal._id}>
-            <MealItem {...mealObject} />
+            <MealItem {...meal} />
           </li>
         );
       })}

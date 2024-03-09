@@ -33,21 +33,33 @@ const config = {
           throw new Error('Incorrect email address or password.');
         }
 
-        return user;
+        return user.toObject();
       }
     })
-  ]
-  // callbacks: {
-  //   async signIn({ user, account, profile, email, credentials }) {
-  //     console.log('[signIn callback] user', user);
+  ],
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token.id = user._id;
+        token.username = user.username;
+        token.email = user.email;
+      }
 
-  //     if (user?.status === 400 || user?.status === 401) {
-  //       throw new Error(user.error);
-  //     }
+      return token;
+    },
+    async session({ session, token }) {
+      if (session?.user) {
+        session.user.id = token.id;
+        session.user.username = token.username;
+        session.user.email = token.email;
 
-  //     return true;
-  //   }
-  // }
+        delete session.user.name;
+        delete session.user.image;
+      }
+
+      return session;
+    }
+  }
 };
 
 export default config;
