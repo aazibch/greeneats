@@ -14,7 +14,6 @@ export default async function MainHeader() {
 
   return (
     <>
-      {/* <MainHeaderBackground /> */}
       <header className={classes.header}>
         <Link className={classes.logo} href="/">
           <Image src={logoImg} alt="A plate with food" priority />
@@ -28,11 +27,13 @@ export default async function MainHeader() {
             <li>
               <NavLink href="/community">The Community</NavLink>
             </li>
-            {session && (
-              <li>
+            <li>
+              {session ? (
                 <LogoutButton />
-              </li>
-            )}
+              ) : (
+                <NavLink href="/auth/login">Login</NavLink>
+              )}
+            </li>
           </ul>
         </nav>
       </header>

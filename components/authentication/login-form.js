@@ -1,9 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import classes from './signup-form.module.css';
+import classes from './login-form.module.css';
 import { signIn, useSession } from 'next-auth/react';
 import { redirectAfterAuth } from '@/lib/actions';
+import Link from 'next/link';
 
 export default function LoginForm() {
   const [email, setEmail] = useState('');
@@ -36,7 +37,7 @@ export default function LoginForm() {
       method="POST"
     >
       <div className={classes.row}>
-        <p>
+        <div>
           <label htmlFor="email">Email address</label>
           <input
             type="email"
@@ -46,24 +47,27 @@ export default function LoginForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-        </p>
+        </div>
       </div>
-      <p>
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          required
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </p>
+      <div className={classes.row}>
+        <div>
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+      </div>
       <div>
         {errorMessage && <p>{errorMessage}</p>}
-        <p className={classes.actions}>
+        <div className={classes.actions}>
+          <Link href="/auth/signup">Signup Instead</Link>
           <button type="submit">Login</button>
-        </p>
+        </div>
       </div>
     </form>
   );

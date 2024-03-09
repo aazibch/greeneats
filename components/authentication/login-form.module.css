@@ -34,14 +34,20 @@
 .row {
   display: flex;
   gap: 1rem;
+  margin-bottom: 1rem;
 }
 
-.row p {
+.row div {
   width: 100%;
 }
 
 .actions {
-  text-align: right;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 1.25rem;
+  display: flex;
+  gap: 1rem;
+  width: 100%;
 }
 
 .actions button {
@@ -69,4 +75,26 @@
   background: #ccc;
   color: #979797;
   cursor: not-allowed;
+}
+
+.actions a {
+  display: inline-block;
+  border-radius: 0.5rem;
+  background: linear-gradient(90deg, #50c878, #5f9ea0);
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.actions a:first-child {
+  background: transparent;
+  font-weight: normal;
+  color: #50c878;
+  box-shadow: none;
+}
+
+.actions a:first-child:hover,
+.actions a:first-child:active {
+  background: transparent;
+  color: #5f9ea0;
 }

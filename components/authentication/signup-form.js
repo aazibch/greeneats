@@ -5,6 +5,7 @@ import { signIn } from 'next-auth/react';
 
 import classes from './signup-form.module.css';
 import { redirectAfterAuth } from '@/lib/actions';
+import Link from 'next/link';
 
 export default function SignupForm() {
   const [username, setUsername] = useState('');
@@ -38,7 +39,7 @@ export default function SignupForm() {
   return (
     <form onSubmit={submitFormHandler} className={classes.form}>
       <div className={classes.row}>
-        <p>
+        <div>
           <label htmlFor="name">Username</label>
           <input
             type="text"
@@ -48,8 +49,8 @@ export default function SignupForm() {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
-        </p>
-        <p>
+        </div>
+        <div>
           <label htmlFor="email">Email address</label>
           <input
             type="email"
@@ -59,35 +60,40 @@ export default function SignupForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-        </p>
+        </div>
       </div>
-      <p>
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          required
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </p>
-      <p>
-        <label htmlFor="password-confirmation">Password Confirmation</label>
-        <input
-          type="password"
-          id="password-confirmation"
-          name="passwordConfirmation"
-          required
-          value={passwordConfirmation}
-          onChange={(e) => setPasswordConfirmation(e.target.value)}
-        />
-      </p>
+      <div className={classes.row}>
+        <div>
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+      </div>
+      <div className={classes.row}>
+        <div>
+          <label htmlFor="password-confirmation">Password Confirmation</label>
+          <input
+            type="password"
+            id="password-confirmation"
+            name="passwordConfirmation"
+            required
+            value={passwordConfirmation}
+            onChange={(e) => setPasswordConfirmation(e.target.value)}
+          />
+        </div>
+      </div>
       <div>
         {errorMessage && <p>{errorMessage}</p>}
-        <p className={classes.actions}>
-          <button>Signup</button>
-        </p>
+        <div className={classes.actions}>
+          <Link href="/auth/login">Login Instead</Link>
+          <button type="submit">Signup</button>
+        </div>
       </div>
     </form>
   );
