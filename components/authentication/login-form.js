@@ -1,10 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import classes from './login-form.module.css';
-import { signIn, useSession } from 'next-auth/react';
-import { redirectAfterAuth } from '@/lib/actions';
 import Link from 'next/link';
+
+import classes from './login-form.module.css';
+import { signIn } from 'next-auth/react';
+import { redirectAfterAuth } from '@/lib/actions';
 
 export default function LoginForm() {
   const [email, setEmail] = useState('');

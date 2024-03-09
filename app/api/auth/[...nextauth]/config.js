@@ -23,7 +23,7 @@ const config = {
           throw new Error('Please provide an email address and password.');
         }
 
-        dbConnect();
+        await dbConnect();
         let user = await User.findOne({ email: credentials.email }).select(
           '+password'
         );
@@ -57,7 +57,7 @@ const config = {
             throw new Error(error.details[0].message);
           }
 
-          dbConnect();
+          await dbConnect();
           const userDoc = await User.create(user);
           return userDoc;
         } catch (err) {
