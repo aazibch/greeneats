@@ -5,7 +5,7 @@ import dbConnect from '@/lib/dbConnect';
 
 const config = {
   pages: {
-    signIn: '/signin'
+    signIn: '/login'
   },
   providers: [
     CredentialsProvider({
@@ -18,7 +18,7 @@ const config = {
         console.log('[Credentials Provider][authorize]');
 
         if (!credentials.email || !credentials.password) {
-          return null;
+          throw new Error('Please provide an email address and password.');
         }
 
         dbConnect();
@@ -30,13 +30,24 @@ const config = {
           !user ||
           !(await user.isPasswordCorrect(credentials.password, user.password))
         ) {
-          return null;
+          throw new Error('Incorrect email address or password.');
         }
 
         return user;
       }
     })
   ]
+  // callbacks: {
+  //   async signIn({ user, account, profile, email, credentials }) {
+  //     console.log('[signIn callback] user', user);
+
+  //     if (user?.status === 400 || user?.status === 401) {
+  //       throw new Error(user.error);
+  //     }
+
+  //     return true;
+  //   }
+  // }
 };
 
 export default config;

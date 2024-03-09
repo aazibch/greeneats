@@ -3,7 +3,7 @@ import classes from './page.module.css';
 import { getServerSession } from 'next-auth';
 import config from '@/app/api/auth/[...nextauth]/config';
 
-export default async function SignIn() {
+export default async function LoginPage() {
   const session = await getServerSession(config);
 
   let userInfo;

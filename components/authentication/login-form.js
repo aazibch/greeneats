@@ -1,17 +1,32 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import classes from './signup-form.module.css';
-import { getCsrfToken, signIn } from 'next-auth/react';
+import { signIn } from 'next-auth/react';
 
 export default function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState(null);
+  const router = useRouter();
 
-  const submitFormHandler = (e) => {
+  const submitFormHandler = async (e) => {
     e.preventDefault();
 
-    signIn('credentials', { email: email, password: password });
+    const res = await signIn('credentials', {
+      email: email,
+      password: password,
+      redirect: false
+    });
+
+    if (res.error) {
+      return setErrorMessage(res.error);
+    }
+
+    if (res.status === 200) {
+      router.push('/');
+    }
   };
 
   return (
@@ -44,6 +59,7 @@ export default function LoginForm() {
         />
       </p>
       <div>
+        {errorMessage && <p>{errorMessage}</p>}
         <p className={classes.actions}>
           <button type="submit">Login</button>
         </p>
