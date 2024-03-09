@@ -1,15 +1,14 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import classes from './signup-form.module.css';
-import { signIn } from 'next-auth/react';
+import { signIn, useSession } from 'next-auth/react';
+import { redirectAfterAuth } from '@/lib/actions';
 
 export default function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState(null);
-  const router = useRouter();
 
   const submitFormHandler = async (e) => {
     e.preventDefault();
@@ -25,7 +24,7 @@ export default function LoginForm() {
     }
 
     if (res.status === 200) {
-      router.push('/');
+      redirectAfterAuth();
     }
   };
 

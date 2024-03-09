@@ -1,12 +1,19 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import MainHeaderBackground from './main-header-background';
 import logoImg from '@/assets/logo.png';
 import classes from './main-header.module.css';
 import NavLink from './nav-link';
+import { getServerSession } from 'next-auth';
+import config from '@/app/api/auth/[...nextauth]/config';
+import { redirect } from 'next/navigation';
+import LogoutButton from './logout-button';
 
-export default function MainHeader() {
+export default async function MainHeader() {
+  const session = await getServerSession(config);
+
+  console.log('[MainHeader] session', session);
+
   return (
     <>
       {/* <MainHeaderBackground /> */}
@@ -23,6 +30,11 @@ export default function MainHeader() {
             <li>
               <NavLink href="/community">The Community</NavLink>
             </li>
+            {session && (
+              <li>
+                <LogoutButton />
+              </li>
+            )}
           </ul>
         </nav>
       </header>
