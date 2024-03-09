@@ -1,28 +1,76 @@
 'use client';
 
-import { useFormState } from 'react-dom';
+import { useState } from 'react';
+import { signIn } from 'next-auth/react';
 
-import { signup } from '@/lib/actions';
 import classes from './signup-form.module.css';
+import { redirectAfterAuth } from '@/lib/actions';
 
 export default function SignupForm() {
-  const [state, formAction] = useFormState(signup, { message: null });
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [passwordConfirmation, setPasswordConfirmation] = useState('');
+  const [errorMessage, setErrorMessage] = useState(null);
+
+  const submitFormHandler = async (e) => {
+    e.preventDefault();
+
+    const res = await signIn('credentials-signup', {
+      username,
+      email,
+      password,
+      passwordConfirmation,
+      redirect: false
+    });
+
+    if (res.error) {
+      return setErrorMessage(res.error);
+    }
+
+    if (res.status === 200) {
+      redirectAfterAuth();
+    }
+  };
+
+  // const [state, formAction] = useFormState(signup, { message: null });
 
   return (
-    <form className={classes.form} action={formAction}>
+    <form onSubmit={submitFormHandler} className={classes.form}>
       <div className={classes.row}>
         <p>
           <label htmlFor="name">Username</label>
-          <input type="text" id="username" name="username" required />
+          <input
+            type="text"
+            id="username"
+            name="username"
+            required
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
         </p>
         <p>
           <label htmlFor="email">Email address</label>
-          <input type="email" id="email" name="email" required />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </p>
       </div>
       <p>
         <label htmlFor="password">Password</label>
-        <input type="password" id="password" name="password" required />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
       </p>
       <p>
         <label htmlFor="password-confirmation">Password Confirmation</label>
@@ -31,10 +79,12 @@ export default function SignupForm() {
           id="password-confirmation"
           name="passwordConfirmation"
           required
+          value={passwordConfirmation}
+          onChange={(e) => setPasswordConfirmation(e.target.value)}
         />
       </p>
       <div>
-        {state.message && <p>{state.message}</p>}
+        {errorMessage && <p>{errorMessage}</p>}
         <p className={classes.actions}>
           <button>Signup</button>
         </p>

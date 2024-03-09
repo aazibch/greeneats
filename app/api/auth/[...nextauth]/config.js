@@ -2,6 +2,7 @@ import CredentialsProvider from 'next-auth/providers/credentials';
 
 import User from '@/models/User';
 import dbConnect from '@/lib/dbConnect';
+import { signupSchema } from '@/lib/schemas';
 
 const config = {
   pages: {
@@ -9,6 +10,7 @@ const config = {
   },
   providers: [
     CredentialsProvider({
+      id: 'credentials',
       name: 'Credentials',
       credentials: {
         email: { label: 'Email', type: 'email' },
@@ -34,6 +36,49 @@ const config = {
         }
 
         return user.toObject();
+      }
+    }),
+    CredentialsProvider({
+      id: 'credentials-signup',
+      name: 'credentials-signup',
+      async authorize(credentials, req) {
+        console.log('["credentials-signup" Provider][authorize]');
+        try {
+          const user = {
+            username: credentials.username,
+            email: credentials.email,
+            password: credentials.password,
+            passwordConfirmation: credentials.passwordConfirmation
+          };
+
+          const { error, value } = signupSchema.validate(user);
+
+          if (error) {
+            throw new Error(error.details[0].message);
+          }
+
+          dbConnect();
+          const userDoc = await User.create(user);
+          return userDoc;
+        } catch (err) {
+          if (
+            'keyPattern' in err &&
+            Object.keys(err.keyPattern)[0] === 'email'
+          ) {
+            throw new Error(
+              'An account with the same email address already exists.'
+            );
+          } else if (
+            'keyPattern' in err &&
+            Object.keys(err.keyPattern)[0] === 'username'
+          ) {
+            throw new Error(
+              'An account with the same username already exists.'
+            );
+          }
+
+          throw err;
+        }
       }
     })
   ],

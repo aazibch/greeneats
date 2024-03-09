@@ -43,6 +43,7 @@ export default function LoginForm() {
             id="email"
             name="email"
             required
+            value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </p>
@@ -54,6 +55,7 @@ export default function LoginForm() {
           id="password"
           name="password"
           required
+          value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
       </p>
