@@ -1,5 +1,9 @@
+import { getServerSession } from 'next-auth';
+
 import classes from './page.module.css';
 import ShareMealForm from '@/components/meals/share-meal-form';
+import config from '@/app/api/auth/[...nextauth]/config';
+import { notFound } from 'next/navigation';
 
 export const metadata = {
   title: 'Share a Meal | GreenEats',
@@ -7,7 +11,13 @@ export const metadata = {
     "Whether it's your own creation or a recipe you learned from your mom, share it with the community!"
 };
 
-export default function ShareMealPage() {
+export default async function ShareMealPage() {
+  const session = await getServerSession(config);
+
+  if (!session) {
+    notFound();
+  }
+
   return (
     <>
       <header className={classes.header}>

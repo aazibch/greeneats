@@ -8,6 +8,7 @@ import { redirectAfterAuth } from '@/lib/actions';
 import Link from 'next/link';
 
 export default function SignupForm() {
+  const [fullName, setFullName] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -18,6 +19,7 @@ export default function SignupForm() {
     e.preventDefault();
 
     const res = await signIn('credentials-signup', {
+      fullName,
       username,
       email,
       password,
@@ -34,13 +36,24 @@ export default function SignupForm() {
     }
   };
 
-  // const [state, formAction] = useFormState(signup, { message: null });
-
   return (
     <form onSubmit={submitFormHandler} className={classes.form}>
       <div className={classes.row}>
         <div>
-          <label htmlFor="name">Username</label>
+          <label htmlFor="fullName">Full name</label>
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            required
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+          />
+        </div>
+      </div>
+      <div className={classes.row}>
+        <div>
+          <label htmlFor="username">Username</label>
           <input
             type="text"
             id="username"
@@ -50,6 +63,8 @@ export default function SignupForm() {
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
+      </div>
+      <div className={classes.row}>
         <div>
           <label htmlFor="email">Email address</label>
           <input
@@ -74,8 +89,6 @@ export default function SignupForm() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-      </div>
-      <div className={classes.row}>
         <div>
           <label htmlFor="password-confirmation">Password Confirmation</label>
           <input

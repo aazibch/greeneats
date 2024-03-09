@@ -6,6 +6,19 @@ const { generateValidationMessage } = require('@/lib/utils');
 
 const userSchema = new mongoose.Schema(
   {
+    fullName: {
+      type: String,
+      required: [true, generateValidationMessage('required', 'full name')],
+      maxlength: [50, generateValidationMessage('max', 'full name', 50)],
+      minlength: [5, generateValidationMessage('min', 'full name', 5)],
+      validate: {
+        validator: function (val) {
+          return /^[a-zA-Z ]*$/.test(val);
+        },
+        message:
+          'The full name may only contain alphabets (letters A-Z) and spaces.'
+      }
+    },
     username: {
       type: String,
       required: [true, generateValidationMessage('required', 'username')],

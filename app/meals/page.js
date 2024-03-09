@@ -1,9 +1,11 @@
 import { Suspense } from 'react';
+import { getServerSession } from 'next-auth';
 import Link from 'next/link';
 
 import classes from './page.module.css';
 import MealsGrid from '@/components/meals/meals-grid';
 import { getMeals } from '@/lib/meals';
+import { config } from 'dotenv';
 
 export const metadata = {
   title: 'Meals | GreenEats',
@@ -16,7 +18,15 @@ async function Meals() {
   return <MealsGrid meals={meals} />;
 }
 
-export default function MealsPage() {
+export default async function MealsPage() {
+  const session = await getServerSession(config);
+
+  let ctaElement = <Link href="/meals/share">Share a Recipe</Link>;
+
+  if (!session) {
+    ctaElement = <Link href="/meals/share">Sign up and share a recipe</Link>;
+  }
+
   return (
     <>
       <header className={classes.header}>
@@ -25,9 +35,7 @@ export default function MealsPage() {
           <span className={classes.highlight}>by and for you.</span>
         </h1>
         <p>Pick an Earth-friendly meal to cook or share your own cuisine!</p>
-        <p className={classes.cta}>
-          <Link href="/meals/share">Share a Recipe</Link>
-        </p>
+        <div className={classes.cta}>{ctaElement}</div>
       </header>
       <main className={classes.main}>
         <Suspense

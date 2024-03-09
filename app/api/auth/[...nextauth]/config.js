@@ -45,6 +45,7 @@ const config = {
         console.log('["credentials-signup" Provider][authorize]');
         try {
           const user = {
+            fullName: credentials.fullName,
             username: credentials.username,
             email: credentials.email,
             password: credentials.password,
@@ -86,6 +87,7 @@ const config = {
     async jwt({ token, user }) {
       if (user) {
         token.id = user._id;
+        token.fullName = user.fullName;
         token.username = user.username;
         token.email = user.email;
       }
@@ -95,6 +97,7 @@ const config = {
     async session({ session, token }) {
       if (session?.user) {
         session.user.id = token.id;
+        session.user.fullName = token.fullName;
         session.user.username = token.username;
         session.user.email = token.email;
 

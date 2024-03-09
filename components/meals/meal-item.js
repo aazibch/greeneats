@@ -16,7 +16,7 @@ export default function MealItem({ title, slug, image, summary, creator }) {
         </div>
         <div className={classes.headerText}>
           <h2>{title}</h2>
-          <p>by {creator.username}</p>
+          <p>by {creator.fullName}</p>
         </div>
       </header>
       <div className={classes.content}>
