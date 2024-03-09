@@ -1,6 +1,6 @@
 require('dotenv').config({ path: '.env.local' });
 const mongoose = require('mongoose');
-const Meal = require('@/models/Meal');
+const Meal = require('./models/Meal');
 
 const databaseString = process.env.DB.replace(
   '<password>',
@@ -30,8 +30,7 @@ const meals = [
       
       5. Serve! Toss with your preferred pasta. For an added touch, top it off with a sprinkle of Parmesan cheese if desired.
       `,
-    creator: 'John Doe',
-    creator_email: 'johndoe@example.com'
+    creator: '65eaad0742d6a8d01eea29ee'
   },
   {
     title: 'Vegetable Soup',
@@ -49,8 +48,7 @@ const meals = [
   
       5. Serve hot, garnished with freshly grated Parmigiano and fresh basil.
       `,
-    creator: 'Max Anderson',
-    creator_email: 'max@example.com'
+    creator: '65eaad0742d6a8d01eea29ee'
   },
   {
     title: 'Huevos Rancheros',
@@ -70,8 +68,7 @@ const meals = [
   
       5. Garnish to your heart’s content! Amp it up with extra salsa, avocado, cojita cheese, cilantro, and hot sauce.
       `,
-    creator: 'Emily Chen',
-    creator_email: 'emilychen@example.com'
+    creator: '65eaad0742d6a8d01eea29ee'
   },
   {
     title: 'Instant Pot Mac and Cheese',
@@ -91,8 +88,7 @@ const meals = [
   
       5. Dig in! It’s that simple.
       `,
-    creator: 'Laura Smith',
-    creator_email: 'laurasmith@example.com'
+    creator: '65eaad0742d6a8d01eea29ee'
   },
   {
     title: 'Perfect Grilled Cheese',
@@ -106,8 +102,7 @@ const meals = [
   
       3. Once both sides are golden brown, transfer to a plate and serve!
       `,
-    creator: 'Mario Rossi',
-    creator_email: 'mariorossi@example.com'
+    creator: '65eaad0742d6a8d01eea29ee'
   },
   {
     title: 'Vegetarian Meatballs',
@@ -131,8 +126,7 @@ const meals = [
   
       8. Toss roasted tomatoes and meatballs with cooked spaghetti, olive oil, fresh basil, and Parmesan cheese before serving.
       `,
-    creator: 'Franz Huber',
-    creator_email: 'franzhuber@example.com'
+    creator: '65eaad0742d6a8d01eea29ee'
   },
   {
     title: 'Coconut Curry Ramen',
@@ -150,8 +144,7 @@ const meals = [
   
       4. Divide into bowls and enjoy! For a non-vegan twist, top with perfectly cooked six-minute eggs.
       `,
-    creator: 'Sophia Green',
-    creator_email: 'sophiagreen@example.com'
+    creator: '65eaad0742d6a8d01eea29ee'
   }
 ];
 
