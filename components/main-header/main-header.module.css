@@ -1,4 +1,4 @@
-.header {
+/* .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,9 +17,9 @@
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 1.5rem;
-  /* font-family: 'Montserrat', sans-serif; */
-  font-size: 1.25rem;
+  gap: 1.5rem; */
+/* font-family: 'Montserrat', sans-serif; */
+/* font-size: 1.25rem;
 }
 
 .logo {
@@ -40,4 +40,4 @@
   height: 5rem;
   object-fit: contain;
   filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.5));
-}
+} */
