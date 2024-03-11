@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.511.0",
-    "@popperjs/core": "^2.11.8",
+    "@floating-ui/react": "^0.26.9",
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.5",
     "joi": "^17.12.2",
