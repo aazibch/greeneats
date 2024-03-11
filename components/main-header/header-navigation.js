@@ -3,6 +3,9 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
+import classes from './header-navigation.module.css';
+import NavLink from './nav-link';
+
 export default function HeaderNavigation() {
   const [showMobileNavigation, setShowMobileNavigation] = useState(false);
 
@@ -45,39 +48,20 @@ export default function HeaderNavigation() {
         } w-full md:block md:w-auto ml-auto`}
         id="navbar-default"
       >
-        <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 text-white">
+        <ul
+          className={`${classes.navigation} font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 text-white`}
+        >
           <li>
-            <Link
-              href="#"
-              className="block py-2 px-3 text-white rounded bg-gray-700 md:bg-transparent md:text-gray-700 md:p-0 "
-              aria-current="page"
-            >
-              Home
-            </Link>
+            <NavLink href="/">Home</NavLink>
           </li>
           <li>
-            <Link
-              href="#"
-              className="block py-2 px-3 rounded hover:bg-green-500 md:hover:bg-transparent md:border-0 md:hover:text-gray-700 md:p-0"
-            >
-              Recipes
-            </Link>
+            <NavLink href="/meals">Recipes</NavLink>
           </li>
           <li>
-            <Link
-              href="#"
-              className="block py-2 px-3 rounded hover:bg-green-500 md:hover:bg-transparent md:border-0 md:hover:text-gray-700 md:p-0 "
-            >
-              Community
-            </Link>
+            <NavLink href="/community">Community</NavLink>
           </li>
           <li>
-            <Link
-              href="#"
-              className="block py-2 px-3 rounded hover:bg-green-500 md:hover:bg-transparent md:border-0 md:hover:text-gray-700 md:p-0"
-            >
-              Login
-            </Link>
+            <NavLink href="/auth/login">Login</NavLink>
           </li>
         </ul>
       </div>

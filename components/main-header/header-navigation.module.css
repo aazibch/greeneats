@@ -1,0 +1,33 @@
+.active {
+  color: rgb(55 65 81);
+  background: rgb(34 197 94);
+}
+
+.navigation:hover .active {
+  color: white;
+  background: none;
+}
+
+.navigation .active:hover {
+  color: rgb(55 65 81);
+  background: rgb(34 197 94);
+}
+
+.navigation a:hover {
+  color: rgb(55 65 81);
+  background: rgb(34 197 94);
+}
+
+@media (min-width: 768px) {
+  .active {
+    background: none;
+  }
+
+  .navigation a:hover {
+    background: none;
+  }
+
+  .navigation .active:hover {
+    background: none;
+  }
+}
