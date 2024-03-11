@@ -87,7 +87,7 @@ export default function HeaderUserMenu() {
                     onClick={logoutButtonClickHandler}
                     className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-600 text-gray-200 hover:text-white"
                   >
-                    Sign out
+                    Logout
                   </button>
                 </li>
               </ul>
