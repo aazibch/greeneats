@@ -60,9 +60,6 @@ export default function HeaderNavigation() {
           <li>
             <NavLink href="/community">Community</NavLink>
           </li>
-          <li>
-            <NavLink href="/auth/login">Login</NavLink>
-          </li>
         </ul>
       </div>
     </>
