@@ -1,13 +1,14 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 import classes from './header-navigation.module.css';
 import NavLink from './nav-link';
 
 export default function HeaderNavigation() {
   const [showMobileNavigation, setShowMobileNavigation] = useState(false);
+  const path = usePathname();
 
   const toggleMobileNavigationClickHandler = () => {
     setShowMobileNavigation(
@@ -21,7 +22,9 @@ export default function HeaderNavigation() {
         onClick={toggleMobileNavigationClickHandler}
         data-collapse-toggle="navbar-default"
         type="button"
-        className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-200 rounded-lg md:hidden hover:border border-gray-200 focus:outline-none focus:ring-1 focus:ring-gray-200"
+        className={`inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-200 rounded-lg md:hidden hover:border border-gray-200 focus:outline-none focus:ring-1 focus:ring-gray-200 ${
+          path.startsWith('/auth/') ? 'ml-auto' : ''
+        }`}
         aria-controls="navbar-default"
         aria-expanded="false"
       >
