@@ -19,7 +19,7 @@ export default function HeroSection() {
               <h2 class="text-4xl font-extrabold uppercase mb-2">
                 For the conscientious eater
               </h2>
-              <p class="text-2xl mb-5 font-normal text-gray-400">
+              <p class="text-2xl mb-6 font-normal text-gray-400">
                 Vegan and vegetarian dishes from all over the world, tailored to
                 Pakistani users.
               </p>
