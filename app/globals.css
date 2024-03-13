@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply text-gray-200;
+    @apply bg-gray-800;
+  }
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Montserrat:wght@400;700&display=swap');
 
 * {
@@ -14,7 +21,8 @@ html {
 
 body {
   margin: 0;
-  background: radial-gradient(#282c34, #282c34);
+  /* background: #2b2a33; */
+  /* background: radial-gradient(#282c34, #282c34); */
 }
 
 .not-found,
