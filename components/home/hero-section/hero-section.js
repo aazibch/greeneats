@@ -6,7 +6,7 @@ import ImageSlideshow from '@/components/images/image-slideshow';
 
 export default function HeroSection() {
   return (
-    <div className="my-10">
+    <section className="my-10">
       <Stack>
         <StackItem>
           <div className="m-auto max-w-[50rem] h-[40rem]">
@@ -41,6 +41,6 @@ export default function HeroSection() {
           </div>
         </StackItem>
       </Stack>
-    </div>
+    </section>
   );
 }
