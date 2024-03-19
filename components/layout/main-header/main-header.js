@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import HeaderLogo from './header-logo';
 import HeaderUserMenu from './header-user-menu';
 import HeaderNavigation from './header-navigation';
-import Container from '../layout/container';
+import Container from '../container';
 
 export default function MainHeader() {
   const path = usePathname();

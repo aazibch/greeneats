@@ -1,6 +1,6 @@
-import MainHeader from '@/components/main-header/main-header';
 import './globals.css';
 import AuthProvider from '@/components/authentication/auth-provider';
+import Layout from '@/components/layout/layout';
 
 export const metadata = {
   title: 'GreenEats - For the conscientious eater',
@@ -12,8 +12,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <AuthProvider>
-          <MainHeader />
-          {children}
+          <Layout>{children}</Layout>
         </AuthProvider>
       </body>
     </html>
