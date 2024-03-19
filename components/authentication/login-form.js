@@ -68,53 +68,21 @@ export default function LoginForm() {
           required
         />
       </div>
-
-      <button
-        type="button"
-        class="focus:outline-none text-white focus:ring-2 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-green-600 hover:bg-green-700 focus:ring-green-800"
-      >
-        Submit
-      </button>
-      <Link
-        href="/auth/signup"
-        className="inline-block py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none rounded-lg border focus:z-10 focus:ring-2 focus:ring-gray-700 bg-gray-800 text-gray-400 border-gray-600 hover:text-white hover:bg-gray-700"
-      >
-        Signup Instead
-      </Link>
-
-      {/* <div className={classes.row}>
-        <div>
-          <label htmlFor="email">Email address</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-      </div>
-      <div className={classes.row}>
-        <div>
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-      </div>
       <div>
-        {errorMessage && <p>{errorMessage}</p>}
-        <div className={classes.actions}>
-          <Link href="/auth/signup">Signup Instead</Link>
-          <button type="submit">Login</button>
-        </div>
-      </div> */}
+        <button
+          type="submit"
+          class="focus:outline-none text-white focus:ring-2 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-green-600 hover:bg-green-700 focus:ring-green-800"
+        >
+          Login
+        </button>
+        <Link
+          href="/auth/signup"
+          className="inline-block py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none rounded-lg border focus:z-10 focus:ring-2 focus:ring-gray-700 bg-gray-800 text-gray-400 border-gray-600 hover:text-white hover:bg-gray-700"
+        >
+          Signup Instead
+        </Link>
+      </div>
+      <div className="h-4">{errorMessage && <p>{errorMessage}</p>}</div>
     </form>
   );
 }
