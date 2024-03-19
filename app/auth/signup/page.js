@@ -1,5 +1,6 @@
 import SignupForm from '@/components/authentication/signup-form';
 import classes from './page.module.css';
+import Container from '@/components/layout/container';
 
 export const metadata = {
   title: 'Signup | GreenEats',
@@ -9,15 +10,16 @@ export const metadata = {
 export default function SignupPage() {
   return (
     <>
-      <header className={classes.header}>
-        <h1>
-          Signup and{' '}
-          <span className={classes.highlight}>join the community</span>
-        </h1>
-      </header>
-      <main className={classes.main}>
-        <SignupForm />
-      </main>
+      <Container className="h-full max-w-[70rem] flex items-center">
+        <div className="w-full">
+          <header className="pb-10">
+            <h1 className="text-green-500 text-3xl">Signup</h1>
+          </header>
+          <main>
+            <SignupForm />
+          </main>
+        </div>
+      </Container>
     </>
   );
 }

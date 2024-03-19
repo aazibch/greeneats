@@ -51,6 +51,8 @@ export default function LoginForm() {
           className="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
           placeholder="name@flowbite.com"
           required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
       </div>
       <div className="mb-5">
@@ -66,6 +68,8 @@ export default function LoginForm() {
           name="password"
           className="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
           required
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
       </div>
       <div>
