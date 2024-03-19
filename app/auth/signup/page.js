@@ -11,7 +11,7 @@ export default function SignupPage() {
   return (
     <>
       <Container className="h-full max-w-[70rem] flex items-center">
-        <div className="w-full">
+        <div className="p-4 w-full">
           <header className="pb-10">
             <h1 className="text-green-500 text-3xl">Signup</h1>
           </header>

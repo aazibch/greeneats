@@ -89,8 +89,8 @@ export default function SignupForm() {
           onChange={(e) => setEmail(e.target.value)}
         />
       </div>
-      <div className="flex mb-5">
-        <div className="grow mr-3">
+      <div className="flex mb-5 flex-col md:flex-row">
+        <div className="grow mb-5 md:mb-0 md:mr-3">
           <label
             htmlFor="password"
             className="block mb-2 text-sm font-medium text-white"
