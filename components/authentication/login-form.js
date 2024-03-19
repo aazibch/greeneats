@@ -32,12 +32,57 @@ export default function LoginForm() {
 
   return (
     <form
-      className={classes.form}
+      className="max-w-[50rem]"
       onSubmit={submitFormHandler}
       action="http://localhost:3000/api/auth/callback/credentials"
       method="POST"
     >
-      <div className={classes.row}>
+      <div className="mb-5">
+        <label
+          for="email"
+          className="block mb-2 text-sm font-medium text-white"
+        >
+          Email Address
+        </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          className="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+          placeholder="name@flowbite.com"
+          required
+        />
+      </div>
+      <div className="mb-5">
+        <label
+          for="password"
+          className="block mb-2 text-sm font-medium text-white"
+        >
+          Password
+        </label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          className="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+          required
+        />
+      </div>
+
+      <button
+        type="button"
+        class="focus:outline-none text-white focus:ring-2 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-green-600 hover:bg-green-700 focus:ring-green-800"
+      >
+        Submit
+      </button>
+      <Link
+        href="/auth/signup"
+        className="inline-block py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none rounded-lg border focus:z-10 focus:ring-2 focus:ring-gray-700 bg-gray-800 text-gray-400 border-gray-600 hover:text-white hover:bg-gray-700"
+      >
+        Signup Instead
+      </Link>
+
+      {/* <div className={classes.row}>
         <div>
           <label htmlFor="email">Email address</label>
           <input
@@ -69,7 +114,7 @@ export default function LoginForm() {
           <Link href="/auth/signup">Signup Instead</Link>
           <button type="submit">Login</button>
         </div>
-      </div>
+      </div> */}
     </form>
   );
 }

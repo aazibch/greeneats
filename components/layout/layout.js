@@ -3,9 +3,9 @@ import MainHeader from './main-header/main-header';
 
 export default function Layout({ children }) {
   return (
-    <div>
+    <div className="border h-full flex flex-col">
       <MainHeader />
-      <main>{children}</main>
+      <main className="grow">{children}</main>
       <MainFooter />
     </div>
   );
