@@ -3,19 +3,20 @@ import { getServerSession } from 'next-auth';
 import Link from 'next/link';
 
 import classes from './page.module.css';
-import MealsGrid from '@/components/meals/meals-grid';
+import RecipeGrid from '@/components/meals/recipe-grid';
 import { getMeals } from '@/lib/meals';
 import { config } from 'dotenv';
+import Container from '@/components/layout/container';
 
 export const metadata = {
-  title: 'Meals | GreenEats',
-  description: 'Browse the delicious meals shared by our community.'
+  title: 'Recipes | GreenEats',
+  description: 'Browse through the meals shared by the community.'
 };
 
-async function Meals() {
-  const meals = await getMeals();
+async function Recipes() {
+  const recipes = await getMeals();
 
-  return <MealsGrid meals={meals} />;
+  return <RecipeGrid recipes={meals} />;
 }
 
 export default async function MealsPage() {
@@ -28,7 +29,7 @@ export default async function MealsPage() {
   }
 
   return (
-    <>
+    <Container>
       <header className={classes.header}>
         <h1>
           Cruelty-free meals, curated{' '}
@@ -44,6 +45,6 @@ export default async function MealsPage() {
           <Meals />
         </Suspense>
       </main>
-    </>
+    </Container>
   );
 }

@@ -39,7 +39,7 @@ export default function LoginForm() {
     >
       <div className="mb-5">
         <label
-          for="email"
+          htmlFor="email"
           className="block mb-2 text-sm font-medium text-white"
         >
           Email Address
@@ -56,7 +56,7 @@ export default function LoginForm() {
       </div>
       <div className="mb-5">
         <label
-          for="password"
+          htmlFor="password"
           className="block mb-2 text-sm font-medium text-white"
         >
           Password
