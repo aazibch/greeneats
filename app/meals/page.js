@@ -13,8 +13,8 @@ export const metadata = {
   description: 'Browse through the meals shared by the community.'
 };
 
-async function Recipes() {
-  const recipes = await getMeals();
+async function Meals() {
+  const meals = await getMeals();
 
   return <RecipeGrid recipes={meals} />;
 }
