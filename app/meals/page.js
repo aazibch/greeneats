@@ -22,21 +22,36 @@ async function Meals() {
 export default async function MealsPage() {
   const session = await getServerSession(config);
 
-  let ctaElement = <Link href="/meals/share">Share a Recipe</Link>;
+  let ctaElement = (
+    <Link
+      href="/meals/share"
+      className="focus:outline-none text-white focus:ring-2 font-medium rounded-lg text-base px-5 py-3 me-2 mb-2 bg-green-600 hover:bg-green-700 focus:ring-green-800"
+    >
+      Share a Recipe
+    </Link>
+  );
 
   if (!session) {
-    ctaElement = <Link href="/meals/share">Sign up and share a recipe</Link>;
+    ctaElement = (
+      <Link
+        href="/auth/login"
+        className="focus:outline-none text-white focus:ring-2 font-medium rounded-lg text-base px-5 py-3 me-2 mb-2 bg-green-600 hover:bg-green-700 focus:ring-green-800"
+      >
+        Login and Share a Recipe
+      </Link>
+    );
   }
 
   return (
     <Container>
-      <header className={classes.header}>
-        <h1>
-          Cruelty-free meals, curated{' '}
-          <span className={classes.highlight}>by and for you.</span>
-        </h1>
-        <p>Pick an Earth-friendly meal to cook or share your own cuisine!</p>
-        <div className={classes.cta}>{ctaElement}</div>
+      <header>
+        <header className="py-20">
+          <h1 className="text-green-500 text-3xl mb-2">Recipes</h1>
+          <p className="text-2xl font-normal text-gray-400 mb-8">
+            Pick an Earth-friendly meal to cook or share your own cuisine!
+          </p>
+          {ctaElement}
+        </header>
       </header>
       <main className={classes.main}>
         <Suspense
