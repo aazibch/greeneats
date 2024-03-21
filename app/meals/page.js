@@ -1,12 +1,13 @@
 import { Suspense } from 'react';
-import { getServerSession } from 'next-auth';
 import Link from 'next/link';
+import { getServerSession } from 'next-auth';
 
-import classes from './page.module.css';
 import RecipeGrid from '@/components/meals/recipe-grid';
-import { getMeals } from '@/lib/meals';
-import { config } from 'dotenv';
 import Container from '@/components/layout/container';
+import { getMeals } from '@/lib/meals';
+import config from '../api/auth/[...nextauth]/config';
+import classes from './page.module.css';
+import LoadingSpinner from '@/components/ui/loading-spinner';
 
 export const metadata = {
   title: 'Recipes | GreenEats',
@@ -44,22 +45,25 @@ export default async function MealsPage() {
 
   return (
     <Container>
-      <header>
-        <header className="py-20">
-          <h1 className="text-green-500 text-3xl mb-2">Recipes</h1>
-          <p className="text-2xl font-normal text-gray-400 mb-8">
-            Pick an Earth-friendly meal to cook or share your own cuisine!
-          </p>
-          {ctaElement}
-        </header>
+      <header className="py-20">
+        <h1 className="text-green-500 text-3xl mb-2">Recipes</h1>
+        <p className="text-2xl font-normal text-gray-400 mb-8">
+          Pick an Earth-friendly meal to cook or share your own cuisine!
+        </p>
+        {ctaElement}
       </header>
-      <main className={classes.main}>
+
+      <div>
         <Suspense
-          fallback={<p className={classes.loading}>Fetching meals...</p>}
+          fallback={
+            <div className="flex justify-center">
+              <LoadingSpinner />
+            </div>
+          }
         >
           <Meals />
         </Suspense>
-      </main>
+      </div>
     </Container>
   );
 }
