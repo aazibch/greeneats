@@ -6,7 +6,6 @@ import RecipeGrid from '@/components/meals/recipe-grid';
 import Container from '@/components/layout/container';
 import { getMeals } from '@/lib/meals';
 import config from '../api/auth/[...nextauth]/config';
-import classes from './page.module.css';
 import LoadingSpinner from '@/components/ui/loading-spinner';
 
 export const metadata = {

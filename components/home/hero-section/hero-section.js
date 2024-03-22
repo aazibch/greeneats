@@ -9,7 +9,7 @@ export default function HeroSection() {
     <section className="my-10">
       <Stack>
         <StackItem>
-          <div className="m-auto max-w-[50rem] h-[40rem]">
+          <div className="m-auto max-w-[50rem] h-[30rem]">
             <ImageSlideshow />
           </div>
         </StackItem>

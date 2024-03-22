@@ -14,7 +14,7 @@ export default function MainHeader() {
     <>
       <nav className="border-gray-200 bg-green-600">
         <Container>
-          <div className="flex flex-wrap items-center justify-center mx-auto p-5">
+          <div className="flex flex-wrap items-center justify-center mx-auto py-5">
             <HeaderLogo />
             {!path.startsWith('/auth/') && <HeaderUserMenu />}
             <HeaderNavigation />
