@@ -56,22 +56,18 @@ export default async function MealDetailsPage({ params }) {
                     {meal.creator.fullName}
                   </a>
                 </p>
-                <p className="mb-3 text-2xl text-gray-400">{meal.summary}</p>
+                <p className="mb-3 text-xl text-gray-400">{meal.summary}</p>
               </div>
             </div>
           </StackItem>
         </Stack>
-
-        <div></div>
       </header>
-      <main>
-        <p
-          className={classes.instructions}
-          dangerouslySetInnerHTML={{
-            __html: meal.instructions
-          }}
-        ></p>
-      </main>
+      <article
+        className="bg-gray-800 border-gray-700 p-8 rounded-lg text-xl"
+        dangerouslySetInnerHTML={{
+          __html: meal.instructions
+        }}
+      ></article>
     </Container>
   );
 }
