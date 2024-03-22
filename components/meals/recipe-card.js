@@ -21,7 +21,7 @@ export default function RecipeCard({ title, slug, image, summary, creator }) {
             <h2 className="mb-2 text-2xl font-bold tracking-tight text-white">
               {title}
             </h2>
-            <p className="text-bs">
+            <p>
               by <span className="font-bold">{creator.fullName}</span>
             </p>
           </div>

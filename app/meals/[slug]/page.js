@@ -1,8 +1,11 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
+import Container from '@/components/layout/container';
 import { getMeal } from '@/lib/meals';
 import classes from './page.module.css';
+import Stack from '@/components/layout/stack/stack';
+import StackItem from '@/components/layout/stack/stack-item';
 
 export async function generateMetadata({ params }) {
   const meal = await getMeal(params.slug);
@@ -27,23 +30,39 @@ export default async function MealDetailsPage({ params }) {
   meal.instructions = meal.instructions.replace(/\n/g, '<br/>');
 
   return (
-    <>
-      <header className={classes.header}>
-        <div className={classes.image}>
-          <Image
-            src={`https://nextjs-food-users-images.s3.ap-south-1.amazonaws.com/${meal.image}`}
-            alt={meal.title}
-            fill
-          />
-        </div>
-        <div className={classes.headerText}>
-          <h1>{meal.title}</h1>
-          <p className={classes.creator}>
-            by{' '}
-            <a href={`mailto:${meal.creator.email}`}>{meal.creator.username}</a>
-          </p>
-          <p className={classes.summary}>{meal.summary}</p>
-        </div>
+    <Container>
+      <header className="my-10">
+        <Stack>
+          <StackItem>
+            <div className="relative max-w-[50rem] h-[30rem] rounded-lg overflow-hidden">
+              <Image
+                className="object-cover"
+                src={`https://nextjs-food-users-images.s3.ap-south-1.amazonaws.com/${meal.image}`}
+                alt={meal.title}
+                fill
+              />
+            </div>
+          </StackItem>
+          <StackItem>
+            <div className="flex items-center h-full">
+              <div>
+                <h1 className="text-3xl mb-2">{meal.title}</h1>
+                <p className="text-lg mb-4">
+                  by{' '}
+                  <a
+                    className="font-bold"
+                    href={`mailto:${meal.creator.email}`}
+                  >
+                    {meal.creator.fullName}
+                  </a>
+                </p>
+                <p className="mb-3 text-2xl text-gray-400">{meal.summary}</p>
+              </div>
+            </div>
+          </StackItem>
+        </Stack>
+
+        <div></div>
       </header>
       <main>
         <p
@@ -53,6 +72,6 @@ export default async function MealDetailsPage({ params }) {
           }}
         ></p>
       </main>
-    </>
+    </Container>
   );
 }
