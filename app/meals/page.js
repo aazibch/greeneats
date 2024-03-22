@@ -10,7 +10,7 @@ import LoadingSpinner from '@/components/ui/loading-spinner';
 
 export const metadata = {
   title: 'Recipes | GreenEats',
-  description: 'Browse through the meals shared by the community.'
+  description: 'Browse through the recipes shared by the community.'
 };
 
 async function Meals() {

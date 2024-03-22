@@ -61,7 +61,7 @@ export default function HeaderNavigation() {
             <NavLink href="/meals">Recipes</NavLink>
           </li>
           <li>
-            <NavLink href="/community">Community</NavLink>
+            <NavLink href="/manifesto">Manifesto</NavLink>
           </li>
         </ul>
       </div>
