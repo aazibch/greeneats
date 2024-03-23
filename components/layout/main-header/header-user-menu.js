@@ -38,7 +38,7 @@ export default function HeaderUserMenu() {
   ]);
 
   const logoutButtonClickHandler = () => {
-    signOut();
+    signOut({ callbackUrl: '/', redirect: true });
   };
 
   let content;

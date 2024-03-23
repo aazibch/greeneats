@@ -64,7 +64,7 @@ export default function ShareMealForm() {
       >
         Share
       </button>
-      {state.message && <p>{state.message}</p>}
+      <div className="h-4">{state.message && <p>{state.message}</p>}</div>
     </form>
   );
 }

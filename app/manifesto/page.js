@@ -100,10 +100,7 @@ export default function CommunityPage() {
             </p>
           </li>
         </ol>
-        <div className="text-gray-400">
-          <p className="mb-1">Aazib Chaudhry and ChatGPT</p>
-          <p>23/03/2024</p>
-        </div>
+        <p className="text-gray-400">23/03/2024</p>
       </article>
     </Container>
   );
