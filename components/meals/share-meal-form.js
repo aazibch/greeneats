@@ -11,7 +11,7 @@ export default function ShareMealForm() {
   const [state, formAction] = useFormState(shareMeal, { message: null });
 
   return (
-    <form className="max-w-[50rem] overflow-auto" action={formAction}>
+    <form className="max-w-[50rem] overflow-auto p-1" action={formAction}>
       <div className="mb-5">
         <label
           htmlFor="title"
@@ -22,7 +22,7 @@ export default function ShareMealForm() {
         <input
           type="text"
           id="title"
-          name="text"
+          name="title"
           className="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
           required
         />

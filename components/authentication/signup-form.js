@@ -37,7 +37,10 @@ export default function SignupForm() {
   };
 
   return (
-    <form onSubmit={submitFormHandler} className="max-w-[50rem] overflow-auto">
+    <form
+      onSubmit={submitFormHandler}
+      className="max-w-[50rem] overflow-auto p-1"
+    >
       <div className="mb-5">
         <label
           htmlFor="fullName"
