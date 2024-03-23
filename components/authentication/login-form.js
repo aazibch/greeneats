@@ -32,7 +32,7 @@ export default function LoginForm() {
 
   return (
     <form
-      className="max-w-[50rem] overflow-auto border"
+      className="max-w-[50rem] overflow-auto"
       onSubmit={submitFormHandler}
       action="http://localhost:3000/api/auth/callback/credentials"
       method="POST"
