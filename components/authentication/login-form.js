@@ -32,7 +32,7 @@ export default function LoginForm() {
 
   return (
     <form
-      className="max-w-[50rem]"
+      className="max-w-[50rem] overflow-auto border"
       onSubmit={submitFormHandler}
       action="http://localhost:3000/api/auth/callback/credentials"
       method="POST"
@@ -71,7 +71,7 @@ export default function LoginForm() {
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
-      <div>
+      <div className="float-right">
         <button
           type="submit"
           className="focus:outline-none text-white focus:ring-2 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-green-600 hover:bg-green-700 focus:ring-green-800"

@@ -4,9 +4,10 @@ import classes from './page.module.css';
 import ShareMealForm from '@/components/meals/share-meal-form';
 import config from '@/app/api/auth/[...nextauth]/config';
 import { notFound } from 'next/navigation';
+import Container from '@/components/layout/container';
 
 export const metadata = {
-  title: 'Share a Meal | GreenEats',
+  title: 'Share a Recipe | GreenEats',
   description:
     "Whether it's your own creation or a recipe you learned from your mom, share it with the community!"
 };
@@ -19,19 +20,16 @@ export default async function ShareMealPage() {
   }
 
   return (
-    <>
-      <header className={classes.header}>
-        <h1>
-          Share a <span className={classes.highlight}>meal</span>
-        </h1>
-        <p>
-          Whether it&apos;s your own creation or a recipe you learned from your
-          mom, share it with the community!
+    <Container>
+      <header className="py-20">
+        <h1 className="text-green-500 text-3xl mb-2">Share a Recipe</h1>
+        <p className="text-2xl font-normal text-gray-400">
+          Whether it's your own creation or a recipe you learned from your mom,
+          share it with the community!
         </p>
       </header>
-      <main className={classes.main}>
-        <ShareMealForm />
-      </main>
-    </>
+
+      <ShareMealForm />
+    </Container>
   );
 }

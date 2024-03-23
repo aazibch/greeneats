@@ -33,17 +33,22 @@ export default function ImagePicker({ label, name }) {
   }
 
   return (
-    <div className={classes.picker}>
-      <label htmlFor={name}>{label}</label>
-      <div className={classes.controls}>
-        <div className={classes.preview}>
-          {!pickedImage && <p>No image.</p>}
+    <div className="mb-5">
+      <label
+        className="block mb-2 text-sm font-medium text-white"
+        htmlFor={name}
+      >
+        {label}
+      </label>
+      <div className="flex items-center">
+        <div className="h-[10rem] w-[10rem] border rounded border-gray-600 relative flex justify-center items-center">
+          {!pickedImage && <p className="text-sm">No image.</p>}
           {pickedImage && (
             <Image src={pickedImage} alt="The user-selected image." fill />
           )}
         </div>
         <input
-          className={classes.input}
+          className="hidden"
           type="file"
           id={name}
           accept="image/png, image/jpeg"
@@ -53,11 +58,11 @@ export default function ImagePicker({ label, name }) {
           required
         />
         <button
-          className={classes.button}
+          className="ml-4 inline-block py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none rounded-lg border focus:z-10 focus:ring-2 focus:ring-gray-700 bg-gray-800 text-gray-400 border-gray-600 hover:text-white hover:bg-gray-700"
           type="button"
           onClick={handlePickClick}
         >
-          Pick an Image
+          Browse
         </button>
       </div>
     </div>

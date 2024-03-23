@@ -11,39 +11,60 @@ export default function ShareMealForm() {
   const [state, formAction] = useFormState(shareMeal, { message: null });
 
   return (
-    <form className={classes.form} action={formAction}>
-      {/* <div className={classes.row}>
-        <p>
-          <label htmlFor="name">Your name</label>
-          <input type="text" id="name" name="name" required />
-        </p>
-        <p>
-          <label htmlFor="email">Your email</label>
-          <input type="email" id="email" name="email" required />
-        </p>
-      </div> */}
-      <p>
-        <label htmlFor="title">Title</label>
-        <input type="text" id="title" name="title" required />
-      </p>
-      <p>
-        <label htmlFor="summary">Summary</label>
-        <input type="text" id="summary" name="summary" required />
-      </p>
-      <p>
-        <label htmlFor="instructions">Instructions</label>
+    <form className="max-w-[50rem] overflow-auto" action={formAction}>
+      <div className="mb-5">
+        <label
+          htmlFor="title"
+          className="block mb-2 text-sm font-medium text-white"
+        >
+          Title
+        </label>
+        <input
+          type="text"
+          id="title"
+          name="text"
+          className="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+          required
+        />
+      </div>
+      <div className="mb-5">
+        <label
+          htmlFor="summary"
+          className="block mb-2 text-sm font-medium text-white"
+        >
+          Summary
+        </label>
+        <input
+          type="text"
+          id="summary"
+          name="summary"
+          className="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+          required
+        />
+      </div>
+      <div className="mb-5">
+        <label
+          htmlFor="instructions"
+          className="block mb-2 text-sm font-medium text-white"
+        >
+          Instructions
+        </label>
         <textarea
           id="instructions"
+          className="block p-2.5 w-full text-sm rounded-lg border bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
           name="instructions"
           rows="10"
           required
         ></textarea>
-      </p>
-      <ImagePicker label="Your image" name="image" />
+      </div>
+      <ImagePicker label="Dish Image" name="image" />
+      <button
+        type="submit"
+        className="float-right focus:outline-none text-white focus:ring-2 font-medium rounded-lg text-sm px-5 py-2.5 me-2 bg-green-600 hover:bg-green-700 focus:ring-green-800"
+      >
+        Share
+      </button>
       {state.message && <p>{state.message}</p>}
-      <p className={classes.actions}>
-        <MealsFormSubmit />
-      </p>
     </form>
   );
 }

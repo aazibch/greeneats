@@ -37,7 +37,7 @@ export default function SignupForm() {
   };
 
   return (
-    <form onSubmit={submitFormHandler} className="max-w-[50rem]">
+    <form onSubmit={submitFormHandler} className="max-w-[50rem] overflow-auto">
       <div className="mb-5">
         <label
           htmlFor="fullName"
@@ -126,7 +126,7 @@ export default function SignupForm() {
         </div>
       </div>
 
-      <div>
+      <div className="float-right">
         <button
           type="submit"
           className="focus:outline-none text-white focus:ring-2 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-green-600 hover:bg-green-700 focus:ring-green-800"
