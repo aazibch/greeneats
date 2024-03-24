@@ -3,9 +3,7 @@
 import { useFormState } from 'react-dom';
 
 import ImagePicker from '@/components/meals/image-picker';
-import MealsFormSubmit from '@/components/meals/meals-form-submit';
 import { shareMeal } from '@/lib/actions';
-import classes from './share-meal-form.module.css';
 
 export default function ShareMealForm() {
   const [state, formAction] = useFormState(shareMeal, { message: null });

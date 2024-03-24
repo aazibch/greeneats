@@ -19,6 +19,8 @@ export default async function ShareMealPage() {
     notFound();
   }
 
+  throw new Error('something is wrong');
+
   return (
     <Container>
       <header className="py-20">
