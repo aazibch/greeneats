@@ -1,4 +1,4 @@
-export default function LoadingSpinner(size) {
+export default function LoadingSpinner({ size }) {
   let sizeClasses = 'w-4 h-4';
 
   if (size === 'md') {
