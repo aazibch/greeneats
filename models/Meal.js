@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const validator = require('validator');
+require('./User');
 
 const mealSchema = new mongoose.Schema({
   title: {

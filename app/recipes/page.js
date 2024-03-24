@@ -24,7 +24,7 @@ export default async function MealsPage() {
 
   let ctaElement = (
     <Link
-      href="/meals/share"
+      href="/recipes/share"
       className="focus:outline-none text-white focus:ring-2 font-medium rounded-lg text-base px-5 py-3 me-2 mb-2 bg-green-600 hover:bg-green-700 focus:ring-green-800"
     >
       Share a Recipe

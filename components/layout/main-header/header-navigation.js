@@ -58,7 +58,7 @@ export default function HeaderNavigation() {
             <NavLink href="/">Home</NavLink>
           </li>
           <li>
-            <NavLink href="/meals">Recipes</NavLink>
+            <NavLink href="/recipes">Recipes</NavLink>
           </li>
           <li>
             <NavLink href="/manifesto">Manifesto</NavLink>
