@@ -8,3 +8,8 @@
     @apply bg-gray-900;
   }
 }
+
+html,
+body {
+  height: 100vh;
+}
