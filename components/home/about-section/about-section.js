@@ -32,6 +32,7 @@ export default function AboutSection() {
               <Image
                 className="block w-[full] object-contain"
                 src={mealImage}
+                alt="A girl with a bowl of vegetables"
               />
             </div>
           </div>

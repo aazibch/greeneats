@@ -41,7 +41,7 @@ export default function CommunityPage() {
           <li className="space-y-5">
             <h3 className="inline">Fostering Community and Connection:</h3>
             <p>
-              GreenEats is more than just a recipe website—it's a thriving
+              GreenEats is more than just a recipe website—it is a thriving
               community of like-minded individuals who share a passion for
               plant-based living. We welcome everyone, from seasoned vegans to
               curious omnivores, to join us in our journey towards a greener,

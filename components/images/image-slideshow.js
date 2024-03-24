@@ -40,12 +40,12 @@ export default function ImageSlideshow() {
         <Image
           key={index}
           src={image.image}
+          alt={image.alt}
           className={
             index === currentImageIndex
               ? `z-10 opacity-100 scale-100 translate-x-[0] rotate-[0] w-full h-full object-cover absolute top-[0] left-[0] [transition:all_0.5s_ease-in-out]`
               : 'w-full h-full object-cover absolute top-[0] left-[0] opacity-0 scale-110 -translate-x-4 -rotate-[5deg] [transition:all_0.5s_ease-in-out]'
           }
-          alt={image.alt}
         />
       ))}
     </div>

@@ -14,6 +14,7 @@ export default function CommunitySection() {
               <Image
                 className="block w-[full] object-contain"
                 src={communityImage}
+                alt="Three people feeling good about themselves after eating vegan food"
               />
             </div>
           </div>

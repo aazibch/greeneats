@@ -12,7 +12,7 @@ export default function ErrorPage() {
               500
             </h1>
             <p class="mb-4 text-3xl tracking-tight font-bold md:text-4xl text-white">
-              Something's wrong.
+              Something is wrong.
             </p>
             <p class="mb-4 text-lg font-light text-gray-400">
               An error occured. Our team has been alterted about the issue and

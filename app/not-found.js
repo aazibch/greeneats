@@ -13,7 +13,7 @@ export default function NotFound() {
               Resource not found.
             </p>
             <p class="mb-4 text-lg font-light text-gray-400">
-              Sorry, we couldn't find the page.
+              Sorry, we could not find the page.
             </p>
           </div>
         </div>
