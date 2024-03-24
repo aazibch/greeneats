@@ -8,7 +8,7 @@ export default function AboutSection() {
   return (
     <section>
       <Stack>
-        <StackItem className="order-2 md:order-1">
+        <StackItem className="order-2 lg:order-1">
           <div className="text-2xl flex items-center h-full">
             <div>
               <h2 className="text-3xl font-bold uppercase mb-6">
@@ -26,7 +26,7 @@ export default function AboutSection() {
             </div>
           </div>
         </StackItem>
-        <StackItem className="order-1 md:order-2">
+        <StackItem className="order-1 lg:order-2">
           <div className="h-full flex items-center">
             <div className="flex max-w-[35rem] items-center justify-center m-auto">
               <Image

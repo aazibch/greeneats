@@ -21,7 +21,7 @@ export default function CommunityPage() {
         </p>
         <ol className="list-decimal list-inside space-y-5">
           <li className="space-y-5">
-            <h3 className="inline-block">Embracing Plant-Powered Living:</h3>
+            <h3 className="inline">Embracing Plant-Powered Living:</h3>
             <p>
               We celebrate the beauty and diversity of vegetarian and vegan
               cuisine. By promoting plant-based recipes, we aim to show that
@@ -30,7 +30,7 @@ export default function CommunityPage() {
             </p>
           </li>
           <li className="space-y-5">
-            <h3 className="inline-block">Cultivating Conscious Consumption:</h3>
+            <h3 className="inline">Cultivating Conscious Consumption:</h3>
             <p>
               We advocate for mindful eating that considers the impact of our
               food choices on the planet. Through our platform, we encourage
@@ -39,9 +39,7 @@ export default function CommunityPage() {
             </p>
           </li>
           <li className="space-y-5">
-            <h3 className="inline-block">
-              Fostering Community and Connection:
-            </h3>
+            <h3 className="inline">Fostering Community and Connection:</h3>
             <p>
               GreenEats is more than just a recipe website—it's a thriving
               community of like-minded individuals who share a passion for
@@ -51,9 +49,7 @@ export default function CommunityPage() {
             </p>
           </li>
           <li className="space-y-5">
-            <h3 className="inline-block">
-              Celebrating Pakistani Culinary Heritage:
-            </h3>{' '}
+            <h3 className="inline">Celebrating Pakistani Culinary Heritage:</h3>{' '}
             <p>
               With a focus on recipes using ingredients readily available in
               Pakistan, we honor the rich culinary traditions of the region. Our
@@ -63,9 +59,7 @@ export default function CommunityPage() {
             </p>
           </li>
           <li className="space-y-5">
-            <h3 className="inline-block">
-              Empowering Change, One Meal at a Time:
-            </h3>{' '}
+            <h3 className="inline">Empowering Change, One Meal at a Time:</h3>{' '}
             <p>
               We believe that every bite we take is a vote for the kind of world
               we want to live in. By choosing plant-based foods, we contribute
@@ -76,9 +70,7 @@ export default function CommunityPage() {
             </p>
           </li>
           <li className="space-y-5">
-            <h3 className="inline-block">
-              Inspiring Innovation and Adaptation:
-            </h3>{' '}
+            <h3 className="inline">Inspiring Innovation and Adaptation:</h3>{' '}
             <p>
               As the world evolves, so too does our understanding of sustainable
               eating. We embrace innovation and adaptation, constantly exploring
@@ -87,7 +79,7 @@ export default function CommunityPage() {
             </p>
           </li>
           <li className="space-y-5">
-            <h3 className="inline-block">Leading by Example:</h3>{' '}
+            <h3 className="inline">Leading by Example:</h3>{' '}
             <p>
               At GreenEats, we lead by example, demonstrating that small changes
               in our everyday lives can have a big impact on the world around
