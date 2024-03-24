@@ -1,5 +1,4 @@
 import LoginForm from '@/components/authentication/login-form';
-import classes from './page.module.css';
 import { getServerSession } from 'next-auth';
 import config from '@/app/api/auth/[...nextauth]/config';
 import Container from '@/components/layout/container';

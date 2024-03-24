@@ -10,7 +10,6 @@ import instantPotMacAndCheeseImg from '@/assets/instant-pot-mac-and-cheese.jpg';
 import perfectGrilledCheeseImg from '@/assets/perfect-grilled-cheese.jpg';
 import vegetarianMeatballsImg from '@/assets/vegetarian-meatballs.jpg';
 import coconutCurryRamenImg from '@/assets/coconut-curry-ramen.jpg';
-import classes from './image-slideshow.module.css';
 
 const images = [
   { image: walnutAndLentilBoloneseImg, alt: 'Walnut and Lentil Bolonese' },
@@ -36,12 +35,16 @@ export default function ImageSlideshow() {
   }, []);
 
   return (
-    <div className={classes.slideshow}>
+    <div className="relative w-full h-full rounded-lg shadow overflow-hidden">
       {images.map((image, index) => (
         <Image
           key={index}
           src={image.image}
-          className={index === currentImageIndex ? classes.active : ''}
+          className={
+            index === currentImageIndex
+              ? `z-10 opacity-100 scale-100 translate-x-[0] rotate-[0] w-full h-full object-cover absolute top-[0] left-[0] [transition:all_0.5s_ease-in-out]`
+              : 'w-full h-full object-cover absolute top-[0] left-[0] opacity-0 scale-110 -translate-x-4 -rotate-[5deg] [transition:all_0.5s_ease-in-out]'
+          }
           alt={image.alt}
         />
       ))}

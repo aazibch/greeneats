@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation';
 
 import Container from '@/components/layout/container';
 import { getMeal } from '@/lib/meals';
-import classes from './page.module.css';
 import Stack from '@/components/layout/stack/stack';
 import StackItem from '@/components/layout/stack/stack-item';
 

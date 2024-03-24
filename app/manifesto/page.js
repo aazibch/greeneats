@@ -1,5 +1,4 @@
 import Container from '@/components/layout/container';
-import classes from './page.module.css';
 
 export const metadata = {
   title: 'Manifesto | GreenEats',

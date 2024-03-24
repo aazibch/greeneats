@@ -1,6 +1,5 @@
 import { getServerSession } from 'next-auth';
 
-import classes from './page.module.css';
 import ShareMealForm from '@/components/meals/share-meal-form';
 import config from '@/app/api/auth/[...nextauth]/config';
 import { notFound } from 'next/navigation';
@@ -18,8 +17,6 @@ export default async function ShareMealPage() {
   if (!session) {
     notFound();
   }
-
-  throw new Error('something is wrong');
 
   return (
     <Container>

@@ -1,5 +1,4 @@
 import SignupForm from '@/components/authentication/signup-form';
-import classes from './page.module.css';
 import Container from '@/components/layout/container';
 
 export const metadata = {

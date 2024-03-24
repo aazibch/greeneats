@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { signIn } from 'next-auth/react';
 
-import classes from './signup-form.module.css';
 import { redirectAfterAuth } from '@/lib/actions';
 import Link from 'next/link';
 
