@@ -17,8 +17,6 @@ const config = {
         password: { label: 'Password', type: 'password' }
       },
       async authorize(credentials, req) {
-        console.log('[Credentials Provider][authorize]');
-
         if (!credentials.email || !credentials.password) {
           throw new Error('Please provide an email address and password.');
         }
@@ -42,7 +40,6 @@ const config = {
       id: 'credentials-signup',
       name: 'credentials-signup',
       async authorize(credentials, req) {
-        console.log('["credentials-signup" Provider][authorize]');
         try {
           const user = {
             fullName: credentials.fullName,

@@ -3,22 +3,27 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
+import LoadingSpinner from '../ui/loading-spinner';
 import { signIn } from 'next-auth/react';
 import { redirectAfterAuth } from '@/lib/actions';
 
 export default function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [pending, setPending] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
 
   const submitFormHandler = async (e) => {
     e.preventDefault();
+    setPending(true);
 
     const res = await signIn('credentials', {
       email: email,
       password: password,
       redirect: false
     });
+
+    setPending(false);
 
     if (res.error) {
       return setErrorMessage(res.error);
@@ -72,10 +77,17 @@ export default function LoginForm() {
       </div>
       <div className="float-right">
         <button
+          disabled={pending}
           type="submit"
-          className="focus:outline-none text-white focus:ring-2 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-green-600 hover:bg-green-700 focus:ring-green-800"
+          className="focus:outline-none text-white focus:ring-2 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-green-600 hover:bg-green-700 focus:ring-green-800 space-x-1"
         >
-          Login
+          {pending ? (
+            <>
+              <LoadingSpinner /> <span>Loading...</span>
+            </>
+          ) : (
+            'Login'
+          )}
         </button>
         <Link
           href="/auth/signup"

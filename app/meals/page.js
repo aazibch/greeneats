@@ -56,7 +56,7 @@ export default async function MealsPage() {
         <Suspense
           fallback={
             <div className="flex justify-center">
-              <LoadingSpinner />
+              <LoadingSpinner size="md" />
             </div>
           }
         >

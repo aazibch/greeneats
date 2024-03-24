@@ -1,10 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { signIn } from 'next-auth/react';
 
 import { redirectAfterAuth } from '@/lib/actions';
-import Link from 'next/link';
+import LoadingSpinner from '../ui/loading-spinner';
 
 export default function SignupForm() {
   const [fullName, setFullName] = useState('');
@@ -12,10 +13,12 @@ export default function SignupForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
+  const [pending, setPending] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
 
   const submitFormHandler = async (e) => {
     e.preventDefault();
+    setPending(true);
 
     const res = await signIn('credentials-signup', {
       fullName,
@@ -25,6 +28,8 @@ export default function SignupForm() {
       passwordConfirmation,
       redirect: false
     });
+
+    setPending(false);
 
     if (res.error) {
       return setErrorMessage(res.error);
@@ -130,10 +135,17 @@ export default function SignupForm() {
 
       <div className="float-right">
         <button
+          disabled={pending}
           type="submit"
-          className="focus:outline-none text-white focus:ring-2 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-green-600 hover:bg-green-700 focus:ring-green-800"
+          className="focus:outline-none text-white focus:ring-2 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-green-600 hover:bg-green-700 focus:ring-green-800 space-x-1"
         >
-          Signup
+          {pending ? (
+            <>
+              <LoadingSpinner /> <span>Loading...</span>
+            </>
+          ) : (
+            'Signup'
+          )}
         </button>
         <Link
           href="/auth/login"

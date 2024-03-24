@@ -1,9 +1,15 @@
-export default function LoadingSpinner() {
+export default function LoadingSpinner(size) {
+  let sizeClasses = 'w-4 h-4';
+
+  if (size === 'md') {
+    sizeClasses = 'w-8 h-8';
+  }
+
   return (
-    <div role="status">
+    <div role="status" className="inline-block">
       <svg
         aria-hidden="true"
-        className="inline w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-gray-600 dark:fill-gray-300"
+        className={`${sizeClasses} inline animate-spin text-gray-600  fill-gray-300`}
         viewBox="0 0 100 101"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

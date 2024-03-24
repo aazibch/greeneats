@@ -3,6 +3,7 @@
 import { useFormState } from 'react-dom';
 
 import ImagePicker from '@/components/meals/image-picker';
+import ShareMealButton from './share-meal-button';
 import { shareMeal } from '@/lib/actions';
 
 export default function ShareMealForm() {
@@ -56,12 +57,7 @@ export default function ShareMealForm() {
         ></textarea>
       </div>
       <ImagePicker label="Dish Image" name="image" />
-      <button
-        type="submit"
-        className="float-right focus:outline-none text-white focus:ring-2 font-medium rounded-lg text-sm px-5 py-2.5 me-2 bg-green-600 hover:bg-green-700 focus:ring-green-800"
-      >
-        Share
-      </button>
+      <ShareMealButton />
       <div className="h-4">{state.message && <p>{state.message}</p>}</div>
     </form>
   );
