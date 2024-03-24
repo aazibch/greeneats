@@ -21,7 +21,7 @@ export default function HeroSection() {
               </h2>
               <p className="text-2xl mb-8 font-normal text-gray-400">
                 Vegan and vegetarian dishes from all over the world, tailored to
-                Pakistani users.
+                a Pakistani audience.
               </p>
               <div>
                 <Link

@@ -1,7 +1,13 @@
-import LoginForm from '@/components/authentication/login-form';
 import { getServerSession } from 'next-auth';
+
 import config from '@/app/api/auth/[...nextauth]/config';
+import LoginForm from '@/components/authentication/login-form';
 import Container from '@/components/layout/container';
+
+export const metadata = {
+  title: 'Login | GreenEats',
+  description: 'Log into your account.'
+};
 
 export default async function LoginPage() {
   const session = await getServerSession(config);

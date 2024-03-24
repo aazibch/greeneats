@@ -5,7 +5,8 @@ import { Inter } from 'next/font/google';
 
 export const metadata = {
   title: 'GreenEats - For the conscientious eater',
-  description: 'Vegan and vegetarian dishes from all over the world.'
+  description:
+    'Vegan and vegetarian dishes from all over the world, tailored to a Pakistani audience.'
 };
 
 const inter = Inter({

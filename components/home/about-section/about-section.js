@@ -20,8 +20,8 @@ export default function AboutSection() {
                 plant-based recipes, you are making a positive impact on the
                 environment and animal welfare. GreenEats empowers you to make
                 conscious choices about what you eat, knowing that every meal
-                you enjoy is helping to reduce your carbon footprint and reduce
-                suffering the world.
+                you enjoy is helping reduce your carbon footprint and the
+                suffering in the world.
               </p>
             </div>
           </div>

@@ -10,7 +10,7 @@ import LoadingSpinner from '@/components/ui/loading-spinner';
 
 export const metadata = {
   title: 'Recipes | GreenEats',
-  description: 'Browse through the recipes shared by the community.'
+  description: 'Pick an Earth-friendly meal to cook or share your own cuisine!'
 };
 
 async function Meals() {

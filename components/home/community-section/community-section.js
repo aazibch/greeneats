@@ -26,11 +26,11 @@ export default function CommunitySection() {
               </h2>
               <p>
                 Share your own recipes, tips, and experiences, and connect with
-                others who share your love for green cuisine. Whether
-                you&apos;re a seasoned chef or a home cook experimenting with
-                plant-based ingredients, GreenEats is your platform to showcase
-                your culinary creations. Join us on a journey of culinary
-                exploration and conscious eating today!
+                others who share your love for green cuisine. Whether you are a
+                seasoned chef or a home cook experimenting with plant-based
+                ingredients, GreenEats is your platform to showcase your
+                culinary creations. Join us on a journey of culinary exploration
+                and conscious eating today!
               </p>
             </div>
           </div>
