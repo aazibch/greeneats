@@ -12,7 +12,7 @@ The uploaded images are stored via the [AWS S3](https://aws.amazon.com/s3/) serv
 
 ## Demo
 
-The demo can be accessed at https://greeneats-demo.netlify.app/.
+The demo can be accessed at https://greeneats.onrender.com/.
 
 You can log into the application using the following credentials:
 
