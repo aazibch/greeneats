@@ -132,29 +132,31 @@ export default function SignupForm() {
           />
         </div>
       </div>
-
-      <div className="float-right">
-        <button
-          disabled={pending}
-          type="submit"
-          className="focus:outline-none text-white focus:ring-2 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-green-600 hover:bg-green-700 focus:ring-green-800 space-x-1"
-        >
-          {pending ? (
-            <>
-              <LoadingSpinner /> <span>Loading...</span>
-            </>
-          ) : (
-            'Signup'
-          )}
-        </button>
-        <Link
-          href="/auth/login"
-          className="inline-block py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none rounded-lg border focus:z-10 focus:ring-2 focus:ring-gray-700 bg-gray-800 text-gray-400 border-gray-600 hover:text-white hover:bg-gray-700"
-        >
-          Login Instead
-        </Link>
+      <div className="overflow-auto">
+        <div className="float-right">
+          <button
+            disabled={pending}
+            type="submit"
+            className="focus:outline-none text-white focus:ring-2 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-green-600 hover:bg-green-700 focus:ring-green-800 space-x-1"
+          >
+            {pending ? (
+              <>
+                <LoadingSpinner /> <span>Loading...</span>
+              </>
+            ) : (
+              'Signup'
+            )}
+          </button>
+          <Link
+            href="/auth/login"
+            className="inline-block py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none rounded-lg border focus:z-10 focus:ring-2 focus:ring-gray-700 bg-gray-800 text-gray-400 border-gray-600 hover:text-white hover:bg-gray-700"
+          >
+            Login Instead
+          </Link>
+        </div>
       </div>
-      <div className="h-4">{errorMessage && <p>{errorMessage}</p>}</div>
+
+      <div className="min-h-6">{errorMessage && <p>{errorMessage}</p>}</div>
     </form>
   );
 }

@@ -58,7 +58,7 @@ export default function ShareMealForm() {
       </div>
       <ImagePicker label="Dish Image" name="image" />
       <ShareMealButton />
-      <div className="h-4">{state.message && <p>{state.message}</p>}</div>
+      <div className="min-h-6">{state.message && <p>{state.message}</p>}</div>
     </form>
   );
 }

@@ -1,7 +1,8 @@
-import './globals.css';
+import { Inter } from 'next/font/google';
+
 import AuthProvider from '@/components/authentication/auth-provider';
 import Layout from '@/components/layout/layout';
-import { Inter } from 'next/font/google';
+import './globals.css';
 
 export const metadata = {
   title: 'GreenEats - For the conscientious eater',
