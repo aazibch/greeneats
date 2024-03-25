@@ -11,6 +11,7 @@ export default function RecipeCard({ title, slug, image, summary, creator }) {
             src={`https://nextjs-food-users-images.s3.ap-south-1.amazonaws.com/${image}`}
             alt={title}
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
       </div>

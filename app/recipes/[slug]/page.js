@@ -39,6 +39,7 @@ export default async function MealDetailsPage({ params }) {
                 src={`https://nextjs-food-users-images.s3.ap-south-1.amazonaws.com/${meal.image}`}
                 alt={meal.title}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
               />
             </div>
           </StackItem>
